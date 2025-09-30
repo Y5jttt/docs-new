@@ -1,5 +1,8 @@
 name: Deploy VuePress to GitHub Pages
 
+permissions:
+  contents: write
+  
 on:
   push:
     branches: [main] # 监听 main 分支的推送，自动触发部署
@@ -30,4 +33,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/.vuepress/dist
-          persist-credentials: false  # 确保使用新的权限配置
