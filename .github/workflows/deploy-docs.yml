@@ -1,48 +1,32 @@
-
-name: 部署文档
+name: Deploy VuePress to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-
-permissions:
-  contents: write
+    branches: [main] # 监听 main 分支的推送，自动触发部署
 
 jobs:
-  deploy-gh-pages:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: 拉取代码
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          # 如果你文档需要 Git 子模块，取消注释下一行
-          # submodules: true
+          fetch-depth: 0 # 拉取完整历史，确保最后更新时间功能正常
 
-
-
-      - name: 设置 Node.js
+      - name: 安装 Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: npm
+          node-version: 20.x # 使用 Node.js 20 版本
+          cache: 'npm' # 缓存依赖，加速构建
 
       - name: 安装依赖
-        run: |
-          corepack enable
-          npm ci
+        run: npm install
 
       - name: 构建文档
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: |-
-          npm run docs:build
-          > src/.vuepress/dist/.nojekyll
+        run: npm run docs:build # 执行打包命令，生成静态文件
 
-      - name: 部署文档
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: 部署到 GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          # 部署文档
-          branch: gh-pages
-          folder: src/.vuepress/dist
+          github_token: ${{ secrets.GITHUB_TOKEN }} # GitHub 自动生成的令牌，无需手动配置
+          publish_dir: ./docs/.vuepress/dist # 打包后的文件目录（固定路径）
