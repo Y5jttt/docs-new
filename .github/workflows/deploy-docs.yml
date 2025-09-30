@@ -28,5 +28,6 @@ jobs:
       - name: 部署到 GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # GitHub 自动生成的令牌，无需手动配置
-          publish_dir: ./docs/.vuepress/dist # 打包后的文件目录（固定路径）
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/.vuepress/dist
+          persist-credentials: false  # 确保使用新的权限配置
