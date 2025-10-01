@@ -16,5 +16,8 @@
     "vue": "^3.5.17",
     "vuepress": "2.0.0-rc.24",
     "vuepress-theme-hope": "2.0.0-rc.94"
+  },
+  "dependencies": {
+    "@icon-park/vue-next": "^1.4.2"
   }
 }
