@@ -1,16 +1,8 @@
 ---
 title: 简介
 icon: icon-park:view-grid-detail
+author: Ysjttt
 ---
-
-<!-- 作者信息模块 -->
-<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; color: #666;">
-  <!-- IconPark 用户图标 -->
-  <icon-park icon="user" width="18" height="18" fill="#666" />
-  <span><strong>作者：</strong>你的名字/昵称（如 ImuCraft）</span>
-  <!-- 可选：添加更新时间 -->
-  <span style="margin-left: 20px;"><icon-park icon="time" width="18" height="18" fill="#666" /> 更新时间：2024-10-01</span>
-</div>
 
 **内蒙古大学似社非社Minecraft分部**是由Ysjttt创立的属于内蒙古大学的Minecraft社团，隶属于内蒙古大学似社非社。
 
