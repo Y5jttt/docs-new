@@ -1,5 +1,5 @@
 ---
-title: 简介
+title: 关于MUA
 icon: icon-park:all-application
 author: Ysjttt
 ---
