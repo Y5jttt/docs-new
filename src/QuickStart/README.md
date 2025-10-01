@@ -2,6 +2,7 @@
 title: 简介
 icon: icon-park:view-grid-detail
 author: Ysjttt
+next: ./AboutMUA
 ---
 
 **内蒙古大学似社非社Minecraft分部**是由Ysjttt创立的属于内蒙古大学的Minecraft社团，隶属于内蒙古大学似社非社。
