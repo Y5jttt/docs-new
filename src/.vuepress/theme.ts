@@ -1,27 +1,25 @@
 import { hopeTheme } from "vuepress-theme-hope";
 
-import { enNavbar, zhNavbar } from "./navbar/index.js";
-import { enSidebar, zhSidebar } from "./sidebar/index.js";
+import { zhNavbar } from "./navbar/index.js";
+import { zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
-
+  hostname: "https://docs.imucraft.cn",
+  favicon: "",
   author: {
-    name: "Mr.Hope",
-    url: "https://mister-hope.com",
+    name: "IMUcraft",
+    url: "https://docs.imucraft.cn",
   },
 
-  logo: "https://theme-hope-assets.vuejs.press/logo.svg",
+  logo: "",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "Y5jttt/docs-new",
 
   docsDir: "src",
 
-  locales: {
+  print: false,
 
-    /**
-     * Chinese locale config
-     */
+  locales: {
     "/": {
       // navbar
       navbar: zhNavbar,
@@ -29,11 +27,10 @@ export default hopeTheme({
       // sidebar
       sidebar: zhSidebar,
 
-      footer: "默认页脚",
+      footer: "  使用 <a href=\"https://theme-hope.vuejs.press/zh/\" target=\"_blank\">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2025-至今 | \n  <a href=\"https://beian.miit.gov.cn/\" target=\"_blank\">鲁ICP备2023015906号-1</a> ",
 
       displayFooter: true,
 
-      // page meta
       metaLocales: {
         editLink: "在 GitHub 上编辑此页",
       },
@@ -86,7 +83,7 @@ export default hopeTheme({
     tabs: true,
     tasklist: true,
     vPre: true,
-
+    markmap: true,
     // uncomment these if you need TeX support
     // math: {
     //   // install katex before enabling it
@@ -105,7 +102,7 @@ export default hopeTheme({
     // flowchart: true,
 
     // install mermaid before enabling it
-    // mermaid: true,
+    mermaid: true,
 
     // playground: {
     //   presets: ["ts", "vue"],
@@ -118,30 +115,44 @@ export default hopeTheme({
     // sandpack: true,
 
     // install @vuepress/plugin-revealjs and uncomment these if you need slides
-    // revealjs: {
-    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
-    // },
+    revealjs: {
+      plugins: ["highlight", "math", "search", "notes", "zoom"],
+    },
   },
 
   plugins: {
     // Note: This is for testing ONLY!
     // You MUST generate and use your own comment service in production.
-    comment: {
-      provider: "Giscus",
-      repo: "vuepress-theme-hope/giscus-discussions",
-      repoId: "R_kgDOG_Pt2A",
-      category: "Announcements",
-      categoryId: "DIC_kwDOG_Pt2M4COD69",
-    },
+    // comment: {
+    //   provider: "Giscus",
+    //   repo: "vuepress-theme-hope/giscus-discussions",
+    //   repoId: "R_kgDOG_Pt2A",
+    //   category: "Announcements",
+    //   categoryId: "DIC_kwDOG_Pt2M4COD69",
+    // },
 
-    components: {
-      components: ["Badge", "VPCard"],
-    },
+    // components: {
+    //   components: ["Badge", "VPCard"],
+    // },
 
     icon: {
       prefix: "fa6-solid:",
     },
 
+    // slimsearch: true,
+    docsearch: {
+      appId: "OXA61NABVT",
+      apiKey: "f9b6bc5ee79d4474d0215e50ad56c99d",
+      indexName: "npucraft",
+      placeholder: "搜索"
+    },
+    components: {
+      components: [
+        "BiliBili",
+      ],
+    },
+
+    // search: true,
     // Install @vuepress/plugin-pwa and uncomment these if you want a PWA
     // pwa: {
     //   favicon: "/favicon.ico",
